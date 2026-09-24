@@ -1,3 +1,4 @@
+-- === Basic Queries====
 -- 1.
 select *
   from patients;
