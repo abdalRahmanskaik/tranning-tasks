@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 40px auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: #d9534f;
+            font-size: 0.85em;
+            margin-top: 4px;
+            display: none;
+        }
+
+        input.invalid,
+        textarea.invalid {
+            border: 1px solid #d9534f;
+        }
+
+        button {
+            margin-top: 16px;
+            padding: 8px 16px;
+        }
+
+        #formSuccess {
+            color: green;
+            margin-top: 12px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="myForm" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <div class="error" id="nameError">Name is required.</div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email">
+        <div class="error" id="emailError">A valid email is required.</div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <div class="error" id="messageError">Message cannot be empty.</div>
+
+        <button type="submit">Submit</button>
+        <div id="formSuccess">Form submitted successfully!</div>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $("#myForm").on("submit", function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                $(".error").hide();
+                $("input, textarea").removeClass("invalid");
+                $("#formSuccess").hide();
+
+                const name = $("#name").val().trim();
+                if (name === "") {
+                    $("#nameError").show();
+                    $("#name").addClass("invalid");
+                    isValid = false;
+                }
+
+                const email = $("#email").val().trim();
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email === "" || !emailPattern.test(email)) {
+                    $("#emailError").show();
+                    $("#email").addClass("invalid");
+                    isValid = false;
+                }
+
+                const message = $("#message").val().trim();
+                if (message === "") {
+                    $("#messageError").show();
+                    $("#message").addClass("invalid");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    $("#formSuccess").show();
+                }
+            });
+
+            $("input, textarea").on("input", function () {
+                $(this).removeClass("invalid");
+                $("#" + $(this).attr("id") + "Error").hide();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

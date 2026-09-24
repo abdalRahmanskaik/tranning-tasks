@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content</title>
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <button id="toggleButton">Show / Hide Content</button>
+
+    <div id="content">
+        <h2>Hello!</h2>
+        <p>This is the content that will be shown or hidden.</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#toggleButton").click(function() {
+                $("#content").toggle();
+            });
+
+        });
+    </script>
+
+</body>
+</html>

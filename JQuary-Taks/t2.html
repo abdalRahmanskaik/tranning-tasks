@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    li { padding: 8px; cursor: pointer; list-style: none; }
+    li.highlight { background-color: #ffe066; }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+
+  <script>
+    $(document).ready(function () {
+      $("li").on("click", function () {
+        $("li").removeClass("highlight"); 
+        $(this).addClass("highlight");    
+      });
+    });
+  </script>
+</body>
+</html>
