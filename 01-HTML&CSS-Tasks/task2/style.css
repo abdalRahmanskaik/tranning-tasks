@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 600px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border: 8px solid white;
+  background-color: #ffffff;
+}
+
+.table th {
+  background-color: #5bb300;
+  color: white;
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: normal;
+  font-size: 14px;
+  border-right: 1px solid #7ecc20;
+}
+
+.table th:last-child {
+  border-right: none;
+}
+
+.table td {
+  padding: 8px 12px;
+  color: #333333;
+  font-size: 13px;
+  border-right: 1px solid #dcdcdc;
+}
+
+.table td:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f5f4e6;
+}
+
+.tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.country-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
