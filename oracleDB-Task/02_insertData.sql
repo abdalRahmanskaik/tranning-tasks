@@ -4,14 +4,14 @@
 -- -------------------------------
 insert into doctors values
    ( 1,
-     'Ahmed Hassan',
+     'Rania Alzaeem',
      'Cardiology',
      '0599000001',
      date '2020-01-15' );
 
 insert into doctors values
    ( 2,
-     'Sara Ali',
+     'ِAhmed Khalaf',
      'Dermatology',
      '0599000002',
      date '2021-03-20' );
@@ -32,7 +32,7 @@ insert into doctors values
 
 insert into doctors values
    ( 5,
-     'Mohammed Saleh',
+     'Mohammed Salah',
      'Orthopedics',
      '0599000005',
      date '2020-11-18' );
@@ -41,8 +41,8 @@ insert into doctors values
 -- -------------------------------
 insert into patients values
    ( 101,
-     'Rania',
-     'Alzaeem',
+     'Sara',
+     'Ali',
      'FEMALE',
      date '1988-05-10',
      '0599111111',
@@ -59,7 +59,7 @@ insert into patients values
 
 insert into patients values
    ( 103,
-     'Maya',
+     'Fatma',
      'Sami',
      'FEMALE',
      date '1995-02-20',
