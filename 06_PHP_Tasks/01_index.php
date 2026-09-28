@@ -14,7 +14,7 @@
 
         <h1>Numbers from 1 to 10</h1>
 
-        <h3 class="numbers" <h2 style="padding: 0px 20px;">
+        <h3 class="numbers" style="padding: 0px 20px;">
             <?php
             for ($i = 1; $i < 10; $i++) {
                 echo "<p>0$i</p>";
